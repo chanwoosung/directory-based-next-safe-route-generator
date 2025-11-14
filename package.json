@@ -1,0 +1,21 @@
+{
+  "name": "safe-router",
+  "version": "0.1.0",
+  "bin": {
+    "safe-router": "dist/cli/main.js"
+  },
+  "scripts": {
+    "build": "tsup src --dts --format esm,cjs --out-dir dist",
+    "dev": "ts-node src/cli/main.ts generate",
+    "generate": "ts-node src/cli/main.ts generate"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.1"
+  }
+}

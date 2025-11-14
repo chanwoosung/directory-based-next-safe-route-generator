@@ -1,0 +1,20 @@
+{
+"compilerOptions": {
+"target": "es2022",
+"module": "commonjs",
+"lib": ["es2022","DOM"],
+"declaration": true,
+"outDir": "dist",
+"strict": true,
+"esModuleInterop": true,
+"forceConsistentCasingInFileNames": true,
+"skipLibCheck": true,
+"resolveJsonModule": true,
+"moduleResolution": "node",
+"rootDir": "src",
+"allowImportingTsExtensions": true,
+"noEmit": true,
+"typeRoots": ["./src/types"]
+},
+"include": ["src"]
+}
