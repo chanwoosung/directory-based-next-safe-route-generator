@@ -20,7 +20,6 @@ program
       root: opts.root,
       type: opts.type,
       out: opts.out,
-      mode: opts.mode,
       watch: opts.watch,
     });
   });
