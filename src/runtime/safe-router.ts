@@ -1,7 +1,10 @@
 "use client";
 
+import type { LinkProps } from "next/link";
+import Link from 'next/link'
 import { useRouter as useAppRouter } from "next/navigation";
 import { useRouter as usePageRouter } from "next/router";
+import { ReactNode } from 'react';
 
 interface RouteBase {
     path: string;
@@ -107,5 +110,18 @@ function createSafeRouter<AllRoutes extends RouteBase>(
     back() {
       router.back();
     },
+  };
+}
+
+export function createSafeLink<AllRoutes extends RouteBase>() {
+  return function SafeLinkTyped<Path extends PathOf<AllRoutes>>(
+    props: Omit<LinkProps, "href"> & {
+      route: RouteArg<AllRoutes, Path>;
+      children?: ReactNode;
+    }
+  ) {
+    const { route, ...rest } = props;
+    const href = resolvePath<AllRoutes, Path>(route);
+    return <Link {...rest} href={href} />;
   };
 }
